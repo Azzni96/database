@@ -40,22 +40,23 @@ MediaSharingApp is a Node.js application that uses a MariaDB database for sharin
 4. Run the database initialization script:
    mysql -u root -p
    SOURCE path/to/media-db.sql;
--- User creation examle, replace name and password with your own
--- real credentials are stored in a "secure" location (.env file)
-CREATE USER 'media'@'localhost' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON `MediaSharingApp`.* TO 'username'@'localhost';
-FLUSH PRIVILEGES;
 
--- Drop the user if it already exists
+- User creation examle, replace name and password with your own
+- real credentials are stored in a "secure" location (.env file)
+- CREATE USER 'media'@'localhost' IDENTIFIED BY '1234';
+- GRANT ALL PRIVILEGES ON `MediaSharingApp`.* TO 'username'@'localhost';
+- FLUSH PRIVILEGES;
+
+- Drop the user if it already exists
 DROP USER IF EXISTS 'mediasharingapp'@'localhost';
 
--- Create the user with a new password
+- Create the user with a new password
 CREATE USER 'media'@'localhost' IDENTIFIED BY '1234';
 
--- Grant all privileges to the user
+- Grant all privileges to the user
 GRANT ALL PRIVILEGES ON `MediaSharingApp`.* TO 'mediasharingapp'@'localhost';
 
--- Apply the changes
+- Apply the changes
 FLUSH PRIVILEGES;
 
 
@@ -85,17 +86,17 @@ The application uses the following environment variables configured in the .env 
    - POST /api/media: Upload new media
    - PUT /api/media/:id: Update media by ID
    - DELETE /api/media/:id: Delete media by ID
-3.Likes
+3. Likes
    - GET /api/likes/media: Fetch all likes
    - GET /api/likes/media/:id: Fetch likes by ID
    - POST /api/likes: Upload new likes
    - DELETE /api/likes/:id: Delete likes by ID
-4.Comments
+4. Comments
    - GET /api/comments/media: Fetch all comments
    - GET /api/comments/media/:id: Fetch comments by ID
    - POST /api/comments: Upload new comments
    - DELETE /api/comments/:id: Delete comments by ID
-5.Rating
+5. Rating
    - GET /api/rating/media: Fetch all rating
    - GET /api/ rating /media/:id: Fetch rating by ID
    - POST /api/ rating: Upload new rating
@@ -103,13 +104,13 @@ The application uses the following environment variables configured in the .env 
 
 
 📂 Project Structure:
-src/
-├── controllers/
-├── models/
-├── routes/
-├── utils/
-├── index.js
-└── .env
+- src/
+-  ├── controllers/
+-  ├── models/
+-  ├── routes/
+-  ├── utils/
+-  ├── index.js
+-  └── .env
 
 🛠 Technologies:
 - Node.js
