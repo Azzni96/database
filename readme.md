@@ -71,60 +71,36 @@ The application uses the following environment variables configured in the .env 
 - DB_NAME: Name of the database (e.g., MediaSharingApp)
 - PORT: Port for the server (e.g., 3000)
 
-📡 API Endpoints for Media, Users, Likes, Comments, and Ratings
-1. Media Endpoints
-- 1.1 POST: Add Media
-- URL: http://127.0.0.1:3000/api/media
-- Method: POST
-Description: Adds a new media item to the MediaItems table.
-1.2 GET: Fetch All Media
-URL: http://127.0.0.1:3000/api/media
-Method: GET
-Description: Retrieves all media items.
-1.3 DELETE: Remove Media
-URL: http://127.0.0.1:3000/api/media/:id
-Method: DELETE
-Description: Deletes a specific media item by its ID.
-2. Users Endpoints
-2.1 POST: Add User
-URL: http://127.0.0.1:3000/api/users
-Method: POST
-Description: Adds a new user to the Users table.
-2.2 GET: Fetch All Users
-URL: http://127.0.0.1:3000/api/users
-Method: GET
-Description: Retrieves all users.
-3. Likes Endpoints
-3.1 POST: Add Like
-URL: http://127.0.0.1:3000/api/likes
-Method: POST
-Description: Adds a new like to the Likes table.
-3.2 GET: Fetch Likes by Media
-URL: http://127.0.0.1:3000/api/likes/media/:media_id
-Method: GET
-Description: Retrieves all likes for a specific media item.
-4. Comments Endpoints
-4.1 POST: Add Comment
-URL: http://127.0.0.1:3000/api/comments
-Method: POST
-Description: Adds a new comment to the Comments table.
-4.2 GET: Fetch Comments by Media
-URL: http://127.0.0.1:3000/api/comments/media/:media_id
-Method: GET
-Description: Retrieves all comments for a specific media item.
-5. Ratings Endpoints
-5.1 POST: Add Rating
-URL: http://127.0.0.1:3000/api/ratings
-Method: POST
-Description: Adds a new rating to the Ratings table.
-5.2 GET: Fetch Ratings by Media
-URL: http://127.0.0.1:3000/api/ratings/media/:media_id
-Method: GET
-Description: Retrieves all ratings for a specific media item.
-5.3 DELETE: Remove Rating
-URL: http://127.0.0.1:3000/api/ratings/:id
-Method: DELETE
-Description: Deletes a specific rating by its ID.
+📡 API Endpoints:
+1. Users
+   - GET /api/users: Fetch all users
+   - GET /api/users/:id: Fetch user by ID
+   - POST /api/users: Create a new user
+   - PUT /api/users/:id: Update user by ID
+   - DELETE /api/users/:id: Delete user by ID
+
+2. Media
+   - GET /api/media: Fetch all media
+   - GET /api/media/:id: Fetch media by ID
+   - POST /api/media: Upload new media
+   - PUT /api/media/:id: Update media by ID
+   - DELETE /api/media/:id: Delete media by ID
+3.Likes
+   - GET /api/likes/media: Fetch all likes
+   - GET /api/likes/media/:id: Fetch likes by ID
+   - POST /api/likes: Upload new likes
+   - DELETE /api/likes/:id: Delete likes by ID
+4.Comments
+   - GET /api/comments/media: Fetch all comments
+   - GET /api/comments/media/:id: Fetch comments by ID
+   - POST /api/comments: Upload new comments
+   - DELETE /api/comments/:id: Delete comments by ID
+5.Rating
+   - GET /api/rating/media: Fetch all rating
+   - GET /api/ rating /media/:id: Fetch rating by ID
+   - POST /api/ rating: Upload new rating
+   - DELETE /api/ rating /:id: Delete rating by ID
+
 
 📂 Project Structure:
 src/
