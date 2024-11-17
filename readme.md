@@ -1,8 +1,7 @@
 Tässä on README.md-tiedosto projektillesi, joka käyttää Node.js:ää, MariaDB
 ä ja Express.js:ää MVC-rakenteella:
 
-markdown
-Kopioi koodi
+
 # MediaSharingApp
 
 MediaSharingApp on Node.js-sovellus, joka käyttää MariaDB-tietokantaa median jakamiseen. Sovellus on rakennettu **MVC**-mallin mukaisesti ja sisältää API-päätepisteet käyttäjille, medialle, tykkäyksille, kommenteille ja arvosteluille.
@@ -35,9 +34,10 @@ MediaSharingApp on Node.js-sovellus, joka käyttää MariaDB-tietokantaa median 
 ## 🚀 Käyttöönotto
 
 ### 1. Kloonaa tämä repositorio
-```bash
-git clone https://github.com/kayttaja/MediaSharingApp.git
-cd MediaSharingApp
+```bash```
+```git clone https://github.com/kayttaja/MediaSharingApp.git
+cd MediaSharingApp ```
+
 2. Asenna riippuvuudet
 bash
 Kopioi koodi
