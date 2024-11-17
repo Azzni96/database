@@ -1,74 +1,92 @@
 MediaSharingApp
 
-MediaSharingApp on Node.js-sovellus, joka käyttää MariaDB-tietokantaa median jakamiseen. Sovellus on rakennettu MVC-mallin mukaisesti ja sisältää API-päätepisteet käyttäjille, medialle, tykkäyksille, kommenteille ja arvosteluille.
+MediaSharingApp is a Node.js application that uses a MariaDB database for sharing media. The application is built following the MVC (Model-View-Controller) architecture and includes API endpoints for users, media, likes, comments, and ratings.
 
-📑 Sisältö:
-- Ominaisuudet
-- Käyttöönotto
-- Ympäristömuuttujat
-- API-päätepisteet
-- Projektirakenne
-- Teknologiat
-- Ota yhteyttä
+📑 Table of Contents:
+- Features
+- Setup
+- Environment Variables
+- API Endpoints
+- Project Structure
+- Technologies
+- Contact
 
-🛠 Ominaisuudet:
-- Käyttäjä voi luoda, lukea, päivittää ja poistaa (CRUD) tietoja:
-  - Käyttäjät
+🛠 Features:
+- Users can perform CRUD (Create, Read, Update, Delete) operations on:
+  - Users
   - Media
-  - Tykkäykset
-  - Kommentit
-  - Arvostelut
-- Media-tiedostojen lataaminen palvelimelle (multer).
-- MariaDB-tietokannan käyttö tiedonhallintaan.
-- MVC-arkkitehtuurin mukainen koodi.
+  - Likes
+  - Comments
+  - Ratings
+- File upload functionality with Multer.
+- Integration with MariaDB for data storage and management.
+- Clean MVC-based architecture.
 
-🚀 Käyttöönotto:
-1. Kloonaa tämä repositorio:
-   git clone https://github.com/kayttaja/MediaSharingApp.git
+🚀 Setup:
+1. Clone this repository:
+   git clone https://github.com/Azzni96/database.git
    cd MediaSharingApp
 
-2. Asenna riippuvuudet:
+2. Install dependencies:
    npm install
 
-3. Lisää .env-tiedosto ja määritä seuraavat arvot:
+3. Add a .env file in the project root with the following values:
    DB_HOST=localhost
    DB_USER=mediasharingapp
    DB_PASSWORD=securepassword123
    DB_NAME=MediaSharingApp
    PORT=3000
 
-4. Aja tietokannan luontiskriptit:
+4. Run the database initialization script:
    mysql -u root -p
    SOURCE path/to/media-db.sql;
+-- User creation examle, replace name and password with your own
+-- real credentials are stored in a "secure" location (.env file)
+CREATE USER 'media'@'localhost' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON `MediaSharingApp`.* TO 'username'@'localhost';
+FLUSH PRIVILEGES;
 
-5. Käynnistä palvelin:
+-- Drop the user if it already exists
+DROP USER IF EXISTS 'mediasharingapp'@'localhost';
+
+-- Create the user with a new password
+CREATE USER 'media'@'localhost' IDENTIFIED BY '1234';
+
+-- Grant all privileges to the user
+GRANT ALL PRIVILEGES ON `MediaSharingApp`.* TO 'mediasharingapp'@'localhost';
+
+-- Apply the changes
+FLUSH PRIVILEGES;
+
+
+5. Start the server:
    npm run dev
-   Sovellus käynnistyy osoitteessa: http://localhost:3000
+   The application will be available at: http://localhost:3000
 
-🌍 Ympäristömuuttujat:
-Sovellus käyttää seuraavia ympäristömuuttujia, jotka määritetään .env-tiedostossa:
-- DB_HOST: Tietokantapalvelimen osoite (esim. localhost)
-- DB_USER: MariaDB-käyttäjätunnus (esim. mediasharingapp)
-- DB_PASSWORD: MariaDB-käyttäjän salasana (esim. securepassword123)
-- DB_NAME: Tietokannan nimi (esim. MediaSharingApp)
-- PORT: Palvelimen portti (esim. 3000)
+🌍 Environment Variables:
+The application uses the following environment variables configured in the .env file:
+- DB_HOST: Database server address (e.g., localhost)
+- DB_USER: MariaDB username (e.g., mediasharingapp)
+- DB_PASSWORD: MariaDB password (e.g., securepassword123)
+- DB_NAME: Name of the database (e.g., MediaSharingApp)
+- PORT: Port for the server (e.g., 3000)
 
-📡 API-päätepisteet:
-1. Käyttäjät
-   - GET /api/users: Hae kaikki käyttäjät
-   - GET /api/users/:id: Hae käyttäjä ID:llä
-   - POST /api/users: Luo uusi käyttäjä
-   - PUT /api/users/:id: Päivitä käyttäjä ID:llä
-   - DELETE /api/users/:id: Poista käyttäjä ID:llä
+📡 API Endpoints:
+1. Users
+   - GET /api/users: Fetch all users
+   - GET /api/users/:id: Fetch user by ID
+   - POST /api/users: Create a new user
+   - PUT /api/users/:id: Update user by ID
+   - DELETE /api/users/:id: Delete user by ID
 
 2. Media
-   - GET /api/media: Hae kaikki mediat
-   - GET /api/media/:id: Hae media ID:llä
-   - POST /api/media: Lataa uusi media
-   - PUT /api/media/:id: Päivitä media ID:llä
-   - DELETE /api/media/:id: Poista media ID:llä
+   - GET /api/media: Fetch all media
+   - GET /api/media/:id: Fetch media by ID
+   - POST /api/media: Upload new media
+   - PUT /api/media/:id: Update media by ID
+   - DELETE /api/media/:id: Delete media by ID
 
-📂 Projektirakenne:
+📂 Project Structure:
 src/
 ├── controllers/
 ├── models/
@@ -77,10 +95,14 @@ src/
 ├── index.js
 └── .env
 
-🛠 Teknologiat:
+🛠 Technologies:
 - Node.js
 - Express.js
 - MariaDB
 - dotenv
 - mysql2
 - multer
+
+📬 Contact:
+For any inquiries or to report issues, please contact the project maintainer.
+
