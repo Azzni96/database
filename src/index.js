@@ -6,6 +6,7 @@ import likesRoutes from './routes/likesRoutes.js';
 import commentsRoutes from './routes/commentsRoutes.js';
 import ratingsRoutes from './routes/ratingsRoutes.js';
 import authRouter from './routes/authRouter.js';
+import { notFoundhandler, errorHandler } from '../middlewares/errorHandler.js';
 
 dotenv.config();
 console.log('DB_HOST:', process.env.DB_HOST);
@@ -49,7 +50,8 @@ app.use('/api/likes', likesRoutes);
 app.use('/api/comments', commentsRoutes);
 app.use('/api/ratings', ratingsRoutes);
 app.use('/api/auth', authRouter);
-
+app.use(notFoundhandler);
+app.use(errorHandler);
 // User resource endpoints
 // TODO: implement user resource
 //app.use('/api/users', userRouter);
