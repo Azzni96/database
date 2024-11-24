@@ -12,6 +12,7 @@ GET http://localhost:3000/api/media/96399
 
 ### Create an item
 POST http://localhost:3000/api/media
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjE5ODc5NywiZXhwIjoxNzMyMjg1MTk3fQ.kEoqfb4NACXmSJDtZWKcdKUTXlMDZr_UV18n_IQsx-8
 Content-Type: multipart/form-data; boundary=----Boundary
 
 ------Boundary
@@ -31,6 +32,8 @@ Content-Type: image/png
 
 ### Create an item FAIL (title missing)
 POST http://localhost:3000/api/media
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjIwNDU3NSwiZXhwIjoxNzMyMjkwOTc1fQ._954b_jEmZPi7KaG0XXuS22ubsbYJNBIv5aBiy3HfC0
+
 Content-Type: multipart/form-data; boundary=----Boundary
 
 ------Boundary
@@ -46,9 +49,68 @@ Content-Type: image/png
 
 ### Update an item
 PUT http://localhost:3000/api/media/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjE5ODc5NywiZXhwIjoxNzMyMjg1MTk3fQ.kEoqfb4NACXmSJDtZWKcdKUTXlMDZr_UV18n_IQsx-8
 Content-Type: application/json
 
 {
   "title": "Uusi title kuvalle",
   "description": "Tosi kiva kuva kissasta."
 }
+
+
+### Login 
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "updateduser",
+  "password": "hashed_pw1"
+}
+### get login user info
+GET http://localhost:3000/api/auth/login  
+Authorization
+
+### Get my user info
+GET http://localhost:3000/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjE5ODc5NywiZXhwIjoxNzMyMjg1MTk3fQ.kEoqfb4NACXmSJDtZWKcdKUTXlMDZr_UV18n_IQsx-8
+### get
+GET http://localhost:3000/api/users/1
+Authorization 
+### put
+PUT http://localhost:3000/api/media/7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjE5ODc5NywiZXhwIjoxNzMyMjg1MTk3fQ.kEoqfb4NACXmSJDtZWKcdKUTXlMDZr_UV18n_IQsx-8
+Content-Type: application/json
+
+{
+  "title": "OK",
+  "description": "nice"
+}
+
+### delete
+DELETE http://localhost:3000/api/media/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjE5ODc5NywiZXhwIjoxNzMyMjg1MTk3fQ.kEoqfb4NACXmSJDtZWKcdKUTXlMDZr_UV18n_IQsx-8
+
+### Like a media item
+POST http://localhost:3000/api/likes/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjE5ODc5NywiZXhwIjoxNzMyMjg1MTk3fQ.kEoqfb4NACXmSJDtZWKcdKUTXlMDZr_UV18n_IQsx-8
+Content-Type: application/json
+
+{
+  "media_id": 1
+}
+### Like a media item FAIL (already liked)
+GET http://localhost:3000/api/likes/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjE5ODc5NywiZXhwIjoxNzMyMjg1MTk3fQ.kEoqfb4NACXmSJDtZWKcdKUTXlMDZr_UV18n_IQsx-8
+
+### Unlike a media item
+DELETE http://localhost:3000/api/likes/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjIwNDU3NSwiZXhwIjoxNzMyMjkwOTc1fQ._954b_jEmZPi7KaG0XXuS22ubsbYJNBIv5aBiy3HfC0
+
+### delete media
+DELETE http://localhost:3000/api/media/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjIwNDU3NSwiZXhwIjoxNzMyMjkwOTc1fQ._954b_jEmZPi7KaG0XXuS22ubsbYJNBIv5aBiy3HfC0
+
+### delete media
+
+DELETE http://localhost:3000/api/media/11
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjIwNDU3NSwiZXhwIjoxNzMyMjkwOTc1fQ._954b_jEmZPi7KaG0XXuS22ubsbYJNBIv5aBiy3HfC0

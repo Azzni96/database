@@ -20,13 +20,32 @@ export const addMedia = async (media) => {
   return { media_id: result.insertId };
 };
 
-export const updateMedia = async (id, media) => {
-  const { title, description } = media;
-  const sql = `UPDATE MediaItems SET title = ?, description = ? WHERE media_id = ?`;
-  await promisePool.query(sql, [title, description, id]);
-};
+export const updateMedia = async (id, data, user_id, user_level_id) => {
+  const { title, description } = data;
+  if (user_level_id === 1) {
+    const sql = `UPDATE MediaItems SET title = ?, description = ? WHERE media_id = ?`;
+    await promisePool.query(sql, [title, description, id]);
+  } else {
+    const sql = `UPDATE MediaItems SET title = ?, description = ? WHERE media_id = ? AND user_id = ?`;
+    const [result] = await promisePool.query(sql, [title, description, id, user_id]);
+    if (result.affectedRows === 0) {
+      throw new Error('You do not have permission to update this media');
+    }
+  }
+}
 
-export const deleteMedia = async (id) => {
-  const sql = `DELETE FROM MediaItems WHERE media_id = ?`;
-  await promisePool.query(sql, [id]);
+
+export const deleteMedia = async (id, user_id, user_level_id) => {
+  if (user_level_id === 1) {
+    // Admin: voi poistaa minkä tahansa media-itemin
+    const sql = `DELETE FROM MediaItems WHERE media_id = ?`;
+    await promisePool.query(sql, [id]);
+  } else {
+    // Tavallinen käyttäjä: voi poistaa vain omat media-itemit
+    const sql = `DELETE FROM MediaItems WHERE media_id = ? AND user_id = ?`;
+    const [result] = await promisePool.query(sql, [id, user_id]);
+    if (result.affectedRows === 0) {
+      throw new Error('Unauthorized or media not found');
+    }
+  }
 };

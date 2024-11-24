@@ -6,7 +6,7 @@ export const listAllUsers = async () => {
 };
 
 export const findUserById = async (id) => {
-  const [rows] = await promisePool.query('SELECT * FROM Users WHERE user_id = ?', [id]);
+  const [rows] = await promisePool.query('SELECT username, email, user_level_id FROM Users WHERE user_id = ?', [id]);
   return rows[0];
 };
 
@@ -29,4 +29,16 @@ export const updateUser = async (id, user) => {
 export const deleteUser = async (id) => {
   const sql = `DELETE FROM Users WHERE user_id = ?`;
   await promisePool.query(sql, [id]);
+};
+
+// How i login By username And password
+export const selectUserByUsernameAndPassword = async (username, password) => {
+  try {
+    const sql = `SELECT * FROM Users WHERE username = ? AND password = ?`;
+    const [rows] = await promisePool.query(sql, [username, password]);
+    return rows[0];
+  } catch (error) {
+    console.error('Error in selectUserByUsernameAndPassword:', error.message);
+    throw new Error('Failed to fetch user');
+  }
 };
