@@ -32,7 +32,7 @@ Content-Type: image/png
 
 ### Create an item FAIL (title missing)
 POST http://localhost:3000/api/media
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjIwNDU3NSwiZXhwIjoxNzMyMjkwOTc1fQ._954b_jEmZPi7KaG0XXuS22ubsbYJNBIv5aBiy3HfC0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjQ2OTEyMCwiZXhwIjoxNzMyNTU1NTIwfQ.gaLPJkQgX4UvJEEFxfPxZAvcMOMs0Zc21-HPyQ572to
 
 Content-Type: multipart/form-data; boundary=----Boundary
 
@@ -49,7 +49,7 @@ Content-Type: image/png
 
 ### Update an item
 PUT http://localhost:3000/api/media/4
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjE5ODc5NywiZXhwIjoxNzMyMjg1MTk3fQ.kEoqfb4NACXmSJDtZWKcdKUTXlMDZr_UV18n_IQsx-8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjQ2OTEyMCwiZXhwIjoxNzMyNTU1NTIwfQ.gaLPJkQgX4UvJEEFxfPxZAvcMOMs0Zc21-HPyQ572to
 Content-Type: application/json
 
 {
@@ -72,7 +72,7 @@ Authorization
 
 ### Get my user info
 GET http://localhost:3000/api/auth/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjE5ODc5NywiZXhwIjoxNzMyMjg1MTk3fQ.kEoqfb4NACXmSJDtZWKcdKUTXlMDZr_UV18n_IQsx-8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjUyMDM1NywiZXhwIjoxNzMyNjA2NzU3fQ.7NB9qFMbTbd5_7Af-hfGf3_IssKLnM1oQrab3hfilXE
 ### get
 GET http://localhost:3000/api/users/1
 Authorization 
@@ -92,7 +92,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c
 
 ### Like a media item
 POST http://localhost:3000/api/likes/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjE5ODc5NywiZXhwIjoxNzMyMjg1MTk3fQ.kEoqfb4NACXmSJDtZWKcdKUTXlMDZr_UV18n_IQsx-8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjUyMDM1NywiZXhwIjoxNzMyNjA2NzU3fQ.7NB9qFMbTbd5_7Af-hfGf3_IssKLnM1oQrab3hfilXE
 Content-Type: application/json
 
 {
@@ -120,7 +120,17 @@ POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-  "username": "testuser",
+  "username": "Nihadd",
+  "email": "testudwdser@example.com",
+  "password": "rdsdadas123"
+}
+
+### post user
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+  "username": "Nihadd",
   "email": "testuser@example.com",
-  "password": "securepassword123"
+  "password": "rd123"
 }

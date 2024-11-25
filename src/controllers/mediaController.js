@@ -5,7 +5,7 @@ import {
   updateMedia,
   deleteMedia,
 } from '../models/mediaModel.js';
-import { validationResult } from 'express-validator';
+import { customError } from '../../middlewares/errorHandler.js';
 
 export const getMedia = async (req, res, next) => {
   try {
@@ -24,10 +24,10 @@ export const getMediaById = async (req, res, next) => {
     } else {
       const error = new Error('Media not found');
       error.status = 404;
-      next(error);
+      next(customError('item not found', error));
     }
   } catch (error) {
-    next(error);
+    next(customError(error.message, 503));
   }
 };
 

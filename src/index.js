@@ -50,6 +50,7 @@ app.use('/api/likes', likesRoutes);
 app.use('/api/comments', commentsRoutes);
 app.use('/api/ratings', ratingsRoutes);
 app.use('/api/auth', authRouter);
+
 app.use(notFoundhandler);
 app.use(errorHandler);
 // User resource endpoints

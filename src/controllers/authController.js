@@ -1,16 +1,18 @@
 import jwt from 'jsonwebtoken';
 import { selectUserByUsernameAndPassword } from '../models/userModel.js';
 import 'dotenv/config';
+import { customError } from '../../middlewares/errorHandler.js';
 
-export const postLogin = async (req, res) => {
+
+export const postLogin = async (req, res, next) => {
   const { username, password } = req.body;
   try {
     const user = await selectUserByUsernameAndPassword(username, password);
     if (user) {
       const token = jwt.sign(user, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRES_IN });
-      res.json({ token, user });
+      res.json({...user, token});
     } else {
-      res.status(401).json({ message: 'Invalid username or password' });
+      return next(customError('Invalid username or password', 401));
     }
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -18,5 +20,9 @@ export const postLogin = async (req, res) => {
 };
 
 export const getMe = (req, res) => {
-  res.json({ user: req.user });
+  try {
+    res.json(req.user);
+  } catch (error) {
+    return next(customError(error.message, 503));
+  }
 };
