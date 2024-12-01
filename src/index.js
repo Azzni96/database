@@ -1,3 +1,4 @@
+import cors from 'cors';
 import express from 'express';
 import dotenv from 'dotenv';
 import mediaRoutes from './routes/mediaRoutes.js';
@@ -7,6 +8,7 @@ import commentsRoutes from './routes/commentsRoutes.js';
 import ratingsRoutes from './routes/ratingsRoutes.js';
 import authRouter from './routes/authRouter.js';
 import { notFoundhandler, errorHandler } from '../middlewares/errorHandler.js';
+
 
 dotenv.config();
 console.log('DB_HOST:', process.env.DB_HOST);
@@ -43,6 +45,7 @@ app.get('/api', (req, res) => {
   });
 });
 
+app.use(cors({origin: '*'}));
 // Media resource endpoints
 app.use('/api/media', mediaRoutes);
 app.use('/api/users', userRoutes);
@@ -56,6 +59,9 @@ app.use(errorHandler);
 // User resource endpoints
 // TODO: implement user resource
 //app.use('/api/users', userRouter);
+app.get('/api', (req, res) => {
+  res.json({ message: 'CORS-enabled for all origins!' });
+});
 
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);

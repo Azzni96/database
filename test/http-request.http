@@ -63,8 +63,8 @@ POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-  "username": "updateduser",
-  "password": "hashed_pw1"
+  "username": "updatdddceduser",
+  "password": "cdzcccd_pw1"
 }
 ### get login user info
 GET http://localhost:3000/api/auth/login  
@@ -100,7 +100,8 @@ Content-Type: application/json
 }
 ### Like a media item FAIL (already liked)
 GET http://localhost:3000/api/likes/user
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjE5ODc5NywiZXhwIjoxNzMyMjg1MTk3fQ.kEoqfb4NACXmSJDtZWKcdKUTXlMDZr_UV18n_IQsx-8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjUyMDM1NywiZXhwIjoxNzMyNjA2NzU3fQ.7NB9qFMbTbd5_7Af-hfGf3_IssKLnM1oQrab3hfilXE
+
 
 ### Unlike a media item
 DELETE http://localhost:3000/api/likes/2
@@ -112,7 +113,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c
 
 ### delete media
 
-DELETE http://localhost:3000/api/media/11
+DELETE http://localhost:3000/api/media/9
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6InVwZGF0ZWR1c2VyIiwicGFzc3dvcmQiOiJoYXNoZWRfcHcxIiwiZW1haWwiOiJ1cGRhdGVkQGV4YW1wbGUuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiY3JlYXRlZF9hdCI6IjIwMjQtMTEtMTZUMDY6NDg6MDcuMDAwWiIsImlhdCI6MTczMjIwNDU3NSwiZXhwIjoxNzMyMjkwOTc1fQ._954b_jEmZPi7KaG0XXuS22ubsbYJNBIv5aBiy3HfC0
 
 ### post user
@@ -130,7 +131,14 @@ POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-  "username": "Nihadd",
-  "email": "testuser@example.com",
-  "password": "rd123"
+  "username": "essefil",
+  "email": "Aleesifl@example.com",
+  "password": "faewiss123"
+}
+### post email
+POST http://localhost:3000/api/auth/forgotpassword
+Content-Type: application/json
+
+{
+  "email": "Aleeifl@example.com"
 }
