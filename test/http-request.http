@@ -63,8 +63,8 @@ POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-  "username": "updatdddceduser",
-  "password": "cdzcccd_pw1"
+  "username": "Azzni",
+  "hashedPassword": "$2a$10$I/x7LV6IcOspuauCmOzkL.T/3DowmZaUcFJjs2btAMPh15JvHoz52"
 }
 ### get login user info
 GET http://localhost:3000/api/auth/login  
@@ -131,14 +131,14 @@ POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-  "username": "essefil",
-  "email": "Aleesifl@example.com",
-  "password": "faewiss123"
+  "username": "Azzni",
+  "email": "Azzni@gmail.com",
+  "password": "12345678"
 }
 ### post email
 POST http://localhost:3000/api/auth/forgotpassword
 Content-Type: application/json
 
 {
-  "email": "Aleeifl@example.com"
+  "email": "nihadazzam96@gmail.com"
 }

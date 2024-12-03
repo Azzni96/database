@@ -6,6 +6,14 @@ import bcrypt from 'bcryptjs';
 import crypto from 'crypto';
 import { saveResetToken, selectUserByEmail } from '../models/userModel.js';
 
+
+/**
+ * 
+ * @param {object} req Request object
+ * @param {object} res Response object
+ * @param {function} next Express next function
+ *
+ */
 export const postLogin = async (req, res, next) => {
   const { username, password } = req.body;
   try{

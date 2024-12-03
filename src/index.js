@@ -8,6 +8,7 @@ import commentsRoutes from './routes/commentsRoutes.js';
 import ratingsRoutes from './routes/ratingsRoutes.js';
 import authRouter from './routes/authRouter.js';
 import { notFoundhandler, errorHandler } from '../middlewares/errorHandler.js';
+import e from 'express';
 
 
 dotenv.config();
@@ -35,9 +36,11 @@ const exampleData = [
   { title: 'Sample Media 1', filename: 'sample1.jpg' },
   { title: 'Sample Media 2', filename: 'sample2.jpg' },
 ];
+app.use('/api', express.static('doc'));
+
 
 // Api documentation page rendered with pug
-app.get('/api', (req, res) => {
+app.get('/custom-docsy', (req, res) => {
   res.render('index', {
     title: 'Media sharing REST API Documentation',
     version: process.env.npm_package_version,
